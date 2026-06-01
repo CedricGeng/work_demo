@@ -12,6 +12,11 @@
 
 <style scoped>
 .web {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
   color: red;
+  text-align: center;
+  font-size: 24px;
 }
 </style>
