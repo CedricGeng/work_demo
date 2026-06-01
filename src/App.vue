@@ -1,11 +1,17 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1 class="web">You did it!</h1>
+  <!-- <h1 class="web">You did it!</h1>
   <p>
     Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
     documentation
-  </p>
+  </p> -->
+  <div class="web">You did it!</div>
+  <div class="web">You did it!</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.web {
+  color: red;
+}
+</style>
