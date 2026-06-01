@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  
+</script>
 
 <template>
   <!-- <h1 class="web">You did it!</h1>
