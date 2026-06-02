@@ -1,32 +1,22 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from "vue"
-let List = ref([
+
+let list = reactive([
   {
     name: "张三",
-    age: 18,
-  },
-  {
-    name: "李四",
-    age: 20,
-  },
-  {
-    name: "王五",
-    age: 22,
   },
 ])
 </script>
+
 <template>
-  <div>
-    <h1>人员列表</h1>
-    <ul>
-      <li v-for="(item, index) in List" :key="index">
-        {{ index + 1 }}-{{ item.name }} - {{ item.age }}岁
-      </li>
-    </ul>
-    <ul>
-      <li v-for="n in 10" :key="n">{{ n }}_{{ n * n }}</li>
-    </ul>
-  </div>
+  <el-table :data="list" style="width: 100%">
+    <el-table-column
+      v-for="item in list"
+      :key="item.name"
+      label="姓名"
+      width="180"
+    />
+  </el-table>
 </template>
 
 <style scoped></style>
