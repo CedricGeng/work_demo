@@ -1,23 +1,18 @@
-<script setup>
-import { reactive, computed } from "vue"
+<template>
+  <input v-model="name" />
+</template>
 
-const author = reactive({
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery",
-  ],
-})
+<script setup lang="ts">
+import { ref, reactive, onMounted, computed, watch } from "vue"
 
-// 一个计算属性 ref
-const publishedBooksMessage = computed(() => {
-  return author.books.length > 0 ? "Yes" : "No"
-})
+let name = ref("Jack")
+watch(
+  name,
+  (newValue, oldValue) => {
+    console.log(`Name changed from ${oldValue} to ${newValue}`)
+  },
+  { immediate: true },
+)
 </script>
 
-<template>
-  <p>Has published books:</p>
-  <!-- <span>{{ publishedBooksMessage }}</span> -->
-  <span>{{ author.books.length >= 0 ? "Yes" : "No" }}</span>
-</template>
+<style scoped></style>
