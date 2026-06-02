@@ -1,12 +1,23 @@
-<script setup lang="ts">
-import { ref, reactive, onMounted } from "vue"
-let show = ref("a")
+<script setup>
+import { reactive, computed } from "vue"
+
+const author = reactive({
+  name: "John Doe",
+  books: [
+    "Vue 2 - Advanced Guide",
+    "Vue 3 - Basic Guide",
+    "Vue 4 - The Mystery",
+  ],
+})
+
+// 一个计算属性 ref
+const publishedBooksMessage = computed(() => {
+  return author.books.length > 0 ? "Yes" : "No"
+})
 </script>
 
 <template>
-  <div v-if="show == 'c'">测试Vue的v-if1</div>
-  <div v-else-if="show == 'a'">测试Vue的v-if2</div>
-  <div v-else="show == 'v'">测试Vue的v-if3</div>
+  <p>Has published books:</p>
+  <!-- <span>{{ publishedBooksMessage }}</span> -->
+  <span>{{ author.books.length >= 0 ? "Yes" : "No" }}</span>
 </template>
-
-<style scoped></style>
