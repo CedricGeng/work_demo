@@ -20,8 +20,11 @@ let List = ref([
     <h1>人员列表</h1>
     <ul>
       <li v-for="(item, index) in List" :key="index">
-        {{ item.name }} - {{ item.age }}岁
+        {{ index + 1 }}-{{ item.name }} - {{ item.age }}岁
       </li>
+    </ul>
+    <ul>
+      <li v-for="n in 10" :key="n">{{ n }}_{{ n * n }}</li>
     </ul>
   </div>
 </template>
