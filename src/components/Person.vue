@@ -1,18 +1,15 @@
 <template>
-  <input v-model="name" />
+  <div>
+    <h2 ref="personTitle">子组件</h2>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, onMounted, computed, watch } from "vue"
-
-let name = ref("Jack")
-watch(
-  name,
-  (newValue, oldValue) => {
-    console.log(`Name changed from ${oldValue} to ${newValue}`)
-  },
-  { immediate: true },
-)
+import { ref, reactive, onMounted, computed, watch, useTemplateRef } from "vue"
+let personTitle = useTemplateRef("personTitle")
+onMounted(() => {
+  console.log("personTitle", personTitle.value)
+})
 </script>
 
 <style scoped></style>

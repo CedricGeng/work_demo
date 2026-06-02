@@ -1,9 +1,10 @@
-<script setup lang="ts">
-import Person from "./components/Person.vue"
-</script>
-
 <template>
-  <Person />
+  <Home />
 </template>
+
+<script setup lang="ts">
+import { ref, reactive, onMounted, computed, watch } from "vue"
+import Home from "./view/home.vue"
+</script>
 
 <style scoped></style>
