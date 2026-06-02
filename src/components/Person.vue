@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from "vue"
-let url = ref("https://picsum.photos/id/237/300/200")
+let onClicks = (e: Event) => {
+  console.log(e)
+}
 </script>
 <template>
-  <img :src="url" alt="avatar" />
+  <button @click="onClicks">Click me</button>
 </template>
 
 <style scoped></style>
