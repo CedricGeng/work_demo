@@ -1,10 +1,14 @@
-<script setup lang="ts">
- import { ref } from 'vue'
- let message = ref('Hello, Vue 3 with TypeScript!')
+<script setup lang="ts" name="personComponent">
+import { ref } from "vue"
+let username = ref("John Doe")
+let age = ref(30)
 </script>
 
 <template>
-  <h1 class="person-title">{{message}}</h1>
+  <h1 class="person-title">{{ username }}</h1>
+  <input v-model="age" placeholder="Enter name" />
+  <p class="person-age">{{ age }} years old</p>
+  <button @click="age++">Increase Age</button>
 </template>
 
 <style scoped>
