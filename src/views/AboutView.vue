@@ -1,11 +1,12 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <h1>{{ doubleCount }}</h1>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive, onMounted, computed, watch } from "vue"
+import useStore from "@/store/index"
+import { storeToRefs } from "pinia"
+const { doubleCount } = storeToRefs(useStore())
 </script>
 
 <style scoped></style>
