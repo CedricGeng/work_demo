@@ -17,7 +17,7 @@ const doubleCount = computed(() => props.count * 2)
 const emit = defineEmits(["getChildData"])
 const sendMsg = () => {
   // 2. emit(事件名, 参数)
-  emit(" ", doubleCount.value)
+  emit("getChildData", doubleCount.value)
 }
 </script>
 
